@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Escolar Expandido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aluno em foco - Controle de Turmas</h1>
+
+        <!-- Seção para cadastro de turmas -->
+        <div class="form-section">
+            <h2>Cadastro de Turma</h2>
+            <input type="text" id="nomeTurma" placeholder="Nome da Turma">
+            <button onclick="adicionarTurma()">Adicionar Turma</button>
+        </div>
+
+        <!-- Seção para cadastro de alunos e visualização das turmas -->
+        <div class="list-section">
+            <h2>Turmas</h2>
+            <select id="selecaoTurma" onchange="mostrarTurma()">
+                <option value="">Selecione uma turma</option>
+                <!-- Turmas serão adicionadas aqui -->
+            </select>
+            <div id="infoTurma">
+                <h3>Alunos da Turma</h3>
+                <input type="text" id="nomeAluno" placeholder="Nome do Aluno">
+                <input type="number" id="notaAluno" placeholder="Nota">
+                <button onclick="adicionarAluno()">Adicionar Aluno</button>
+                <table id="tabelaAlunos">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Nota</th>
+                            <th>Frequência</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Alunos serão adicionados aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Seção de horários de aula -->
+        <div class="form-section">
+            <h2>Horário de Aulas</h2>
+            <input type="text" id="materia" placeholder="Matéria">
+            <input type="text" id="diaSemana" placeholder="Dia da Semana">
+            <input type="time" id="horaInicio" placeholder="Hora Início">
+            <input type="time" id="horaFim" placeholder="Hora Fim">
+            <button onclick="adicionarHorario()">Adicionar Horário</button>
+            <table id="tabelaHorarios">
+                <thead>
+                    <tr>
+                        <th>Matéria</th>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Horários serão adicionados aqui -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Seção de calendário acadêmico -->
+        <div class="form-section">
+            <h2>Calendário Acadêmico</h2>
+            <input type="date" id="dataEvento" placeholder="Data">
+            <input type="text" id="descricaoEvento" placeholder="Descrição do Evento">
+            <button onclick="adicionarEvento()">Adicionar Evento</button>
+            <ul id="listaEventos">
+                <!-- Eventos serão adicionados aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
